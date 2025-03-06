@@ -15,7 +15,7 @@ export const Skills = () => {
         <Section ClassName="flex flex-col items-start gap-6 w-full">
             <Badge className="text-xl" variant={"outline"}>Skills</Badge>
 
-            {/* Frontend Skills */}
+          
             <div className="w-full">
                 <h3 className="text-xl font-bold tracking-wide mb-2">Front-end </h3>
                 <div className="flex justify-between gap-4 w-full flex-wrap">
@@ -39,7 +39,7 @@ export const Skills = () => {
                 </div>
             </div>
 
-            {/* Backend Skills */}
+            
             <div className="w-full mt-6">
                 <h3 className="text-xl font-bold tracking-wide mb-2">Back-end </h3>
                 <div className="flex justify-between gap-4 w-full flex-wrap">

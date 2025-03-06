@@ -1,4 +1,4 @@
-// but de ma section : définir une largeur maximum
+//définition d'une largeur maximum
 
 import { cn } from "@/lib/utils"
 import { PropsWithChildren } from "react"

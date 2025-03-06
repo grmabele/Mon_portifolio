@@ -1,7 +1,5 @@
 
 import { Section } from "./Section";
-import { Code } from "lucide-react";
-
 
 export const Hero = () => {
   return (
@@ -12,8 +10,8 @@ export const Hero = () => {
           <h2 className="font-caption text-5xl text-primary">Relgrand MOUNGUEMBO</h2>
           <h3 className="font-caption text-3xl">Développeur Full stack</h3>
           <p>
-             Je recherche actuellement un contrat d'alternance de 2 ans, à partir de septembre 2025, 
-             avec un rythme de 3 semaines en entreprise/1 semaine à l'école. 
+            Je recherche actuellement un contrat d&apos;alternance de 2 ans, à partir de septembre 2025,
+            avec un rythme de 3 semaines en entreprise/1 semaine à l&apos;école.
           </p>
         </div>
 
