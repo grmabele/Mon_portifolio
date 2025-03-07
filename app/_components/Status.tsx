@@ -29,9 +29,9 @@ export const Status = () => {
         </div>
 
        
-        <div className="flex-[2] w-full p-2 flex flex-col gap-6">
+        <div className="flex-[2] w-full  flex flex-col gap-6 hfull">
          
-          <Card className="p-4 flex-1">
+          <Card className="p-4 flex-1 h-full">
             <p className="text-lg text-muted-foreground">Expériences professionnelles</p>
             <div className="flex flex-col gap-4 mt-2">
               {WORK_PROJECTS.map((work, index) => (
@@ -48,11 +48,11 @@ export const Status = () => {
             </div>
           </Card>
 
-          <Card className="p-4 flex-1 flex flex-col gap-4">
+          <Card className="p-4 flex-1 flex flex-col gap-2 h-full">
             <p className="text-lg text-muted-foreground ">Contactez-moi</p>
               
             <ContactCard
-            className= {"h-21"}
+            className= "flex-1 h-full min-h-[0px]"
             url="mailto:grmabele@gmail.com"
             name="grmabele@gmail.com"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
@@ -61,7 +61,7 @@ export const Status = () => {
             />
 
             <ContactCard 
-            className= {"h-21"}
+            className= "flex-1 h-full min-h-[86px]"
             url="https://www.linkedin.com/in/relgrand"
             name="Relgrand Giresse"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
@@ -77,7 +77,7 @@ export const Status = () => {
 // Liste des Side Projects
 const SIDE_PROJECTS: SideProjectProps[] = [
   { Logo: Notebook, title: "Portifolio", description: "Création de mon portifolio (React/Nextjs/Tailwind)", url: "/project-1" },
-  { Logo: SendToBack, title: "Gestion de stocks", description: "Application développée (Angular/Spring)", url: "/project-2" },
+  { Logo: SendToBack, title: "Gestion de stocks", description: "Application développée (Front Angular/ Back API Spring)", url: "/project-2" },
   { Logo: Notebook, title: "Prise de notes", description: "Outils de prise de notes (Java/JavaFx)", url: "/project-3" },
   { Logo: Smartphone, title: "Jeu Bejeweled", description: "Application mobile (React-Native)", url: "/project-4" },
   { Logo: WormIcon, title: "Serpent", description: "création site elevage de serpents (PHP/MySQL)", url: "/project-5" },
@@ -185,11 +185,11 @@ export const ContactCard = ({ image, mediumImage, name, description, url, classN
   return (
     <Link 
       href={url ?? "#"} 
-      className={`w-full ${className || ""}`} 
+      className="w-full" 
       target={url?.startsWith("http") ? "_blank" : undefined} 
       rel={url?.startsWith("http") ? "noopener noreferrer" : undefined}
     >
-      <Card className="p-3 bg-accent/10 flex items-center gap-4">
+      <Card className={`p-3 bg-accent/10 flex items-center gap-4 h-full min-h-[150px] ${className || ""}`}> 
         <div className="relative">
           <img src={image} alt={name} className="w-10 h-10 rounded-full object-contain" />
           <img src={mediumImage} alt={`${name} icon`} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
@@ -207,4 +207,3 @@ export const ContactCard = ({ image, mediumImage, name, description, url, classN
     </Link>
   );
 };
-
