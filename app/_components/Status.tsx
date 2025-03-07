@@ -29,7 +29,7 @@ export const Status = () => {
         </div>
 
        
-        <div className="flex-[2] w-full flex flex-col gap-10">
+        <div className="flex-[2] w-full p-2 flex flex-col gap-6">
          
           <Card className="p-4 flex-1">
             <p className="text-lg text-muted-foreground">Expériences professionnelles</p>
@@ -52,14 +52,16 @@ export const Status = () => {
             <p className="text-lg text-muted-foreground ">Contactez-moi</p>
               
             <ContactCard
+            className= {"h-21"}
             url="mailto:grmabele@gmail.com"
             name="grmabele@gmail.com"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
             mediumImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4vtphMtxRWfK6nO2CIbGfSETyEs79Dr6oPw&s"
-            description="Email me for any inquiries"
+            description="Envoyez-moi un e-mail pour toute question"
             />
 
             <ContactCard 
+            className= {"h-21"}
             url="https://www.linkedin.com/in/relgrand"
             name="Relgrand Giresse"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
@@ -74,11 +76,11 @@ export const Status = () => {
 
 // Liste des Side Projects
 const SIDE_PROJECTS: SideProjectProps[] = [
-  { Logo: Notebook, title: "Portifolio", description: "Création de mon portifolio (React/Nextjs/Tailwing)", url: "/project-1" },
+  { Logo: Notebook, title: "Portifolio", description: "Création de mon portifolio (React/Nextjs/Tailwind)", url: "/project-1" },
   { Logo: SendToBack, title: "Gestion de stocks", description: "Application développée (Angular/Spring)", url: "/project-2" },
   { Logo: Notebook, title: "Prise de notes", description: "Outils de prise de notes (Java/JavaFx)", url: "/project-3" },
   { Logo: Smartphone, title: "Jeu Bejeweled", description: "Application mobile (React-Native)", url: "/project-4" },
-  { Logo: WormIcon, title: "Serpent", description: "création d&apos;un site d&apos;elevage de serpents (PHP/MySQL)", url: "/project-5" },
+  { Logo: WormIcon, title: "Serpent", description: "création site elevage de serpents (PHP/MySQL)", url: "/project-5" },
 ];
 
 // Liste des expériences professionnelles
@@ -96,7 +98,7 @@ const WORK_PROJECTS: WorkProjectProps[] = [
     image: "https://media.licdn.com/dms/image/v2/D4D0BAQG9IurN9gabOA/company-logo_100_100/company-logo_100_100/0/1730890883367/universite_de_haute_alsace_mulhouse_colmar_logo?e=1749081600&v=beta&t=NOpxXmFGlRzUZSlk4EmWxwtCsogmaZerSXDhy5eFcKM",
     title: "Nimofy",
     role: "Développeur Symfony",
-    date: "2024",
+    date: "2024-2024",
     url: "https://www.pappers.fr/entreprise/chanvrier-jerome-923793996",
   },
   {
@@ -145,12 +147,12 @@ type WorkProjectProps = {
 const WorkProject = ({ image, title, role, date, url, freelance }: WorkProjectProps) => {
     return (
       <Link href={url} className="flex items-center gap-4 hover:bg-accent/50 transition-colors p-3 rounded cursor-pointer">
-        {/* Image */}
+      
         <span className="w-10 h-10 flex-shrink-0">  
           <img src={image} alt={title} className="rounded-full object-cover w-full h-full" />
         </span>
         
-        {/* Infos + Date sur la même ligne */}
+        
         <div className="flex flex-col flex-grow min-w-0">
           <div className="flex justify-between items-center w-full">
             
@@ -175,27 +177,34 @@ type ContactCardProps = {
     name: string;
     description: string;
     url?: string;
+    className?: string
      
 };
 
-const ContactCard = ({ image, mediumImage, name, description }: ContactCardProps) => {
+export const ContactCard = ({ image, mediumImage, name, description, url, className }: ContactCardProps) => {
   return (
-    <Card className="p-3 bg-accent/10 flex items-center gap-4">
-            <div className="relative">
-                <img src={image} alt={name} className="w-10 h-10 rounded-full object-contain" />
-                <img src={mediumImage} alt={name + " icon"} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
-            </div>
+    <Link 
+      href={url ?? "#"} 
+      className={`w-full ${className || ""}`} 
+      target={url?.startsWith("http") ? "_blank" : undefined} 
+      rel={url?.startsWith("http") ? "noopener noreferrer" : undefined}
+    >
+      <Card className="p-3 bg-accent/10 flex items-center gap-4">
+        <div className="relative">
+          <img src={image} alt={name} className="w-10 h-10 rounded-full object-contain" />
+          <img src={mediumImage} alt={`${name} icon`} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
+        </div>
 
-            <div className="mr-auto">
-                <div className="flex items-center gap-2">
-                    <p className="text-lg font-semibold">{name}</p>
-                </div>
-                <p className="text-xs text-muted-foreground">{description}</p>
-            </div>
+        <div className="mr-auto">
+          <div className="flex items-center gap-2">
+            <p className="text-lg font-semibold">{name}</p>
+          </div>
+          <p className="text-xs text-muted-foreground">{description}</p>
+        </div>
 
-            <ArrowUpRight 
-            className="group-hover:translate-x-2 mr-4 group-hover:-translate-y-2 transition-transform"
-            size={16}/>
-        </Card>
+        <ArrowUpRight className="group-hover:translate-x-2 mr-4 group-hover:-translate-y-2 transition-transform" size={16} />
+      </Card>
+    </Link>
   );
 };
+

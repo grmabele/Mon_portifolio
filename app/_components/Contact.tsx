@@ -17,15 +17,17 @@ export const Contact = () => {
             </h2>
             <div className="flex max-md:flex-col w-full gap-4">
                 <ContactCard 
+                className="h-22"
                 url="mailto:grmabele@gmail.com"
                 name="grmabele@gmail.com"
                 image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
                 mediumImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4vtphMtxRWfK6nO2CIbGfSETyEs79Dr6oPw&s"
-                description="Email me for any inquiries"
+                description="Envoyez-moi un e-mail pour toute question"
 
                 
                 />
                 <ContactCard 
+                className="h-22"
                 url="https://www.linkedin.com/in/relgrand"
                 name="Relgrand Giresse"
                 image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"

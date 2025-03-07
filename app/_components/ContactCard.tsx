@@ -9,14 +9,15 @@ export type ContactCardProps = {
     mediumImage: string;
     name: string;
     description: string;
-    url?: string 
+    url?: string
+    className?:string 
   };
   
-  export const ContactCard = ({ image, mediumImage, name, description, url }: ContactCardProps) => {
+  export const ContactCard = ({ image, mediumImage, name, description, url, className }: ContactCardProps) => {
     return (
       <Link href={url ?? "#"} className="w-full">
         
-        <Card className="p-3 bg-accent/10 flex items-center gap-4">
+        <Card className={`p-3 bg-accent/10 flex items-center gap-4 ${className || ""}`}>
             <div className="relative">
                 <img src={image} alt={name} className="w-10 h-10 rounded-full object-contain" />
                 <img src={mediumImage} alt={name + " icon"} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
