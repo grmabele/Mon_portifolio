@@ -11,7 +11,7 @@ export const Status = () => {
     <Section>
       <section className="flex max-md:flex-col items-start gap-4">
       
-        <div className="flex-[3] w-full">
+        <div className="flex-[3] w-full min-w-0">
           <Card className="w-full p-4 flex flex-col gap-2">
             <p className="text-lg text-muted-foreground">Mes réalisations</p>
             <div className="flex flex-col gap-4">
@@ -29,7 +29,7 @@ export const Status = () => {
         </div>
 
        
-        <div className="flex-[2] w-full  flex flex-col gap-6 hfull">
+        <div className="flex-[2] w-full  flex flex-col gap-6 hfull min-w-0">
          
           <Card className="p-4 flex-1 h-full">
             <p className="text-lg text-muted-foreground">Expériences professionnelles</p>
