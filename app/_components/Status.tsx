@@ -29,7 +29,7 @@ export const Status = () => {
         </div>
 
        
-        <div className="flex-[2] w-full  flex flex-col gap-6 h-full  max-md:w-full max-md:gap-2">
+        <div className="flex-[2] w-full  flex flex-col gap-6 h-full min-w-0">
          
           <Card className="p-4 flex-1 h-full">
             <p className="text-lg text-muted-foreground">Expériences professionnelles</p>
@@ -52,7 +52,7 @@ export const Status = () => {
             <p className="text-lg text-muted-foreground ">Contactez-moi</p>
               
             <ContactCard
-            className= "flex-1 h-full min-h-[0px] w-full"
+            className= "flex-1 h-full min-h-[0px]"
             url="mailto:grmabele@gmail.com"
             name="grmabele@gmail.com"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
@@ -61,7 +61,7 @@ export const Status = () => {
             />
 
             <ContactCard 
-            className= "flex-1 h-full min-h-[86px] w-full"
+            className= "flex-1 h-full min-h-[86px]"
             url="https://www.linkedin.com/in/relgrand"
             name="Relgrand Giresse"
             image="https://lh3.googleusercontent.com/a/ACg8ocJ8YVoM9v20iok3nO73RHr9WFVc-Vyg_D2NbbXeQrdH--xP4fKV=s576-c-no"
@@ -189,7 +189,7 @@ export const ContactCard = ({ image, mediumImage, name, description, url, classN
       target={url?.startsWith("http") ? "_blank" : undefined} 
       rel={url?.startsWith("http") ? "noopener noreferrer" : undefined}
     >
-      <Card className={`p-3 bg-accent/10 flex items-center gap-4 h-full min-h-[150px] w-full max-w-full ${className || ""}`}> 
+      <Card className={`p-3 bg-accent/10 flex items-center gap-4 h-full min-h-[150px] ${className || ""}`}> 
         <div className="relative">
           <img src={image} alt={name} className="w-10 h-10 rounded-full object-contain" />
           <img src={mediumImage} alt={`${name} icon`} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
