@@ -11,7 +11,7 @@ export const Status = () => {
     <Section>
       <section className="flex max-md:flex-col items-start gap-4">
       
-        <div className="flex-[3] w-full min-w-0">
+        <div className="flex-[3] w-full">
           <Card className="w-full p-4 flex flex-col gap-2">
             <p className="text-lg text-muted-foreground">Mes réalisations</p>
             <div className="flex flex-col gap-4">
@@ -29,7 +29,7 @@ export const Status = () => {
         </div>
 
        
-        <div className="flex-[2] w-full  flex flex-col gap-6 h-full min-w-0">
+        <div className="flex-[2] w-full  flex flex-col gap-6 hfull">
          
           <Card className="p-4 flex-1 h-full">
             <p className="text-lg text-muted-foreground">Expériences professionnelles</p>
@@ -77,7 +77,7 @@ export const Status = () => {
 // Liste des Side Projects
 const SIDE_PROJECTS: SideProjectProps[] = [
   { Logo: Notebook, title: "Portifolio", description: "Création de mon portifolio (React/Nextjs/Tailwind)", url: "/project-1" },
-  { Logo: SendToBack, title: "Gestion de stocks", description: "Application développée (Front Angular/ Back API Spring)", url: "/project-2" },
+  { Logo: SendToBack, title: "Gestion de stocks", description: "Application développée (Angular/Spring)", url: "/project-2" },
   { Logo: Notebook, title: "Prise de notes", description: "Outils de prise de notes (Java/JavaFx)", url: "/project-3" },
   { Logo: Smartphone, title: "Jeu Bejeweled", description: "Application mobile (React-Native)", url: "/project-4" },
   { Logo: WormIcon, title: "Serpent", description: "création site elevage de serpents (PHP/MySQL)", url: "/project-5" },
